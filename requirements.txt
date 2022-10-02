@@ -8,4 +8,5 @@ idna==3.3
 multidict==6.0.2
 py-cord==2.1.1
 pycord-multicog==1.0.2
+pymongo==4.2.0
 yarl==1.8.1
