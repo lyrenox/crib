@@ -81,8 +81,9 @@ class Donor(commands.Cog):
 
         donor = UserEntry(str(ctx.guild.id), user.id)
         try:
-            old_amount = donor.fetch()['amount']
-            if old_amount is None:
+            if donor.fetch() is None:
+                old_amount = donor.fetch()['amount']
+            else:
                 old_amount = 0
             donor.update_amount(amount)
             new_embed = Embed(description=f"Successfully added {amount:,} to {user.mention}'s donations.\nTotal: `{old_amount:,}` → `{donor.fetch()['amount']:,}`")
@@ -106,8 +107,9 @@ class Donor(commands.Cog):
             if donor.fetch()['amount'] < amount:
                 amount = donor.fetch()['amount']
             try:
-                old_amount = donor.fetch()['amount']
-                if old_amount is None:
+                if donor.fetch() is None:
+                    old_amount = donor.fetch()['amount']
+                else:
                     old_amount = 0
                 donor.update_amount(amount * -1)
                 new_embed = Embed(description=f"Successfully removed {amount:,} from {user.mention}'s donations.\nTotal: `{old_amount:,}` → `{donor.fetch()['amount']:,}`")
