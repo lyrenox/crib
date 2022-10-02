@@ -4,7 +4,7 @@ from pymongo import MongoClient
 
 
 global client
-client = MongoClient(os.environ('ATLAS_HOST'))
+client = MongoClient(os.environ['ATLAS_HOST'])
 db = client.database
 
 class UserEntry:

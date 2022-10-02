@@ -10,7 +10,7 @@ class Memer(discord.Bot):
         intents.members = True
         super().__init__(intents=intents)
 
-        self.token = os.environ('DISCORD_TOKEN')
+        self.token = os.environ['DISCORD_TOKEN']
         self.owners = [717408952035573767]
             
     async def on_ready(self):
