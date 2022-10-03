@@ -8,7 +8,7 @@ class Memer(discord.Bot):
     def __init__(self):
         intents = discord.Intents.default()
         intents.members = True
-        super().__init__(intents=intents, member_cache_flags=discord.MemberCacheFlags.from_intents(intents))
+        super().__init__(intents=intents)
 
         self.token = os.environ['DISCORD_TOKEN']
         self.owners = [717408952035573767]
